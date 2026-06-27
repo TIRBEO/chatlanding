@@ -6,6 +6,7 @@ import LandingLayout from "./App";
 import { Hero } from "./sections/Hero";
 import { Marquee } from "./sections/Marquee";
 import { Features } from "./sections/Features";
+import { Stats } from "./sections/Stats";
 import { PreviewDeck } from "./sections/PreviewDeck";
 import { Showcase } from "./sections/Showcase";
 import { HowItWorks } from "./sections/HowItWorks";
@@ -22,6 +23,7 @@ function HomePage() {
       <Hero />
       <Marquee />
       <Features />
+      <Stats />
       <PreviewDeck />
       <Showcase />
       <HowItWorks />
