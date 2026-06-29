@@ -1,28 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import { exchangeCode, setSession } from "@/lib/session";
+import { exchangeCode, setSession, decodeSession } from "@/lib/session";
 
 type Status = "exchanging" | "success" | "error";
-
-interface AppSession {
-  user: {
-    id: string;
-    email: string;
-    username: string;
-    displayName: string;
-    avatarUrl?: string;
-  };
-  token: string;
-  expiresAt: number;
-}
-
-function decodeSession(encoded: string): AppSession | null {
-  try {
-    return JSON.parse(atob(encoded)) as AppSession;
-  } catch {
-    return null;
-  }
-}
 
 export default function AuthCallback() {
   const [searchParams] = useSearchParams();
